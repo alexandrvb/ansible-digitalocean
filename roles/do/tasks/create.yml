@@ -1,0 +1,20 @@
+- block:
+  - name: create droplet
+    digital_ocean:
+      api_token={{ token }}
+      name={{ droplet.name }}
+      size_id={{ droplet.size_id | default(size_id) }}
+      region_id={{ droplet.region_id | default(region_id) }}
+      image_id={{ droplet.image_id | default(image_id) }}
+      private_networking={{ droplet.private_networking | default(private_networking) }}
+      ssh_key_ids={{ ssh_key_ids }}
+      unique_name=yes
+    register: created
+  - name: add dns
+    digital_ocean_domain:
+      api_token={{ token }}
+      name={{ droplet.name }}.{{ do_domain }}
+      ip={{ created.droplet.ip_address }}
+  - name: show info
+    debug: msg={{ droplet.name }}.{{ do_domain }}
+  when: droplet.delete is undefined      

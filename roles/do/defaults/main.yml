@@ -1,0 +1,4 @@
+size_id: 512mb
+region_id: fra1
+image_id: centos-7-x64
+private_networking: yes

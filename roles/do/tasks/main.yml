@@ -1,0 +1,4 @@
+- include: create.yml droplet={{ item }}
+  with_items: "{{ do_droplets }}"
+- include: destroy.yml droplet={{ item }}
+  with_items: "{{ do_droplets }}"
