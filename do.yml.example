@@ -1,0 +1,7 @@
+- hosts: localhost
+  vars:
+    - token: DO_TOKEN
+    - ssh_key_ids: SSH_KEY_ID
+    - do_domain: DO_DELEGATED_DOMAIN
+  roles:
+    - do

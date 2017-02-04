@@ -1,2 +1,4 @@
 *.retry
+do.yml
 facts_cache/
+host_vars/localhost
