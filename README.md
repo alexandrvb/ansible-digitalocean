@@ -12,3 +12,7 @@ Ansible role for creating and destroying DigitalOcean droplets. It also manages 
 ```
 ansible-playbook do.yml
 ```
+
+## doctl
+* Setup access
+    doctl auth init
