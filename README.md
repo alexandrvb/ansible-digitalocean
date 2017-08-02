@@ -15,4 +15,10 @@ ansible-playbook do.yml
 
 ## doctl
 * Setup access
-    doctl auth init
+```
+doctl auth init
+```
+* List droplets
+```
+doctl compute droplet list
+```
